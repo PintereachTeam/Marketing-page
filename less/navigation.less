@@ -1,0 +1,65 @@
+header {
+    .displayFlex(row, space-between, stretch);
+    width: 100%;
+    height: 70px;
+    background-color: rgba(0,0,0, 0.9);
+    position: fixed;
+    z-index: 10;
+
+    @media @tablet {
+        height: 60px;
+    }
+
+    .logo{
+        .displayFlex(row, space-around, center);
+        width: 170px;
+        margin-left: 17px;
+        text-decoration: none;
+        
+        img {
+            height: 60%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: @pintereach-red;
+            
+            @media @tablet {
+                font-size: 2rem;
+            }
+        }
+    } // closes .logo
+
+    nav {
+        .displayFlex(row, space-between, center);
+        width: 320px;
+        margin-right: 17px;
+
+        @media @tablet {
+            width: 280px;
+        }
+
+        a {
+            font-size: 1.7rem;
+            font-family: @headerFont;
+            text-decoration: none;
+            color: @nav-font;
+
+            @media @tablet {
+                font-size: 1.5rem;
+            }
+
+            &:hover {
+                animation-name: colorChange;
+                animation-duration: 1.0s;
+                animation-fill-mode: forwards;
+            }
+
+            @keyframes colorChange {
+                to {
+                    color: @pintereach-red;
+                }
+            }
+        }
+    } // closes nav
+} // closes header
