@@ -1,0 +1,168 @@
+header {
+    .displayFlex(row, space-between, stretch);
+    width: 100%;
+    height: 70px;
+    background-color: rgba(0,0,0, 0.9);
+    position: fixed;
+    z-index: 10;
+
+    @media @tablet {
+        height: 60px;
+    }
+
+    .logo{
+        .displayFlex(row, space-around, center);
+        width: 170px;
+        margin-left: 17px;
+        text-decoration: none;
+        
+        img {
+            height: 60%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: @pintereach-red;
+            
+            @media @tablet {
+                font-size: 2rem;
+            }
+        }
+    } // closes .logo
+
+    nav {
+        .displayFlex(row, space-between, center);
+        width: 320px;
+        margin-right: 17px;
+
+        @media @tablet {
+            width: 280px;
+        }
+
+        a {
+            font-size: 1.7rem;
+            font-family: @headerFont;
+            text-decoration: none;
+            color: @nav-font;
+
+            @media @tablet {
+                font-size: 1.5rem;
+            }
+
+            @media @hamburger {
+                display: none;
+            }
+
+            &:hover {
+                .buttonAnimation(colorChange, 1.0s, forwards)
+            }
+
+            @keyframes colorChange {
+                to {
+                    color: @pintereach-red;
+                }
+            }
+        }
+
+        #menu {
+            width: 35px;
+            height: 50px;
+            margin: 23px 20px 20px 20px;    // location of hamburger menu
+            cursor: pointer;
+
+            .bar {
+                height: 5px;
+                width: 100%;
+                background-color: white;  // color of hamburger menu
+                display: block;
+                border-radius: 5px;
+
+                @media (min-width: 700px) {
+                    display: none;
+                }
+            }
+
+            #bar1 {
+                transform: translateY(-4px);
+            }
+            #bar3{
+                transform: translateY(4px);
+            }
+        } // closes #menu
+
+        .nav {
+            padding: 0;
+            display: none;
+
+            li {
+                list-style: none;
+                padding: 16px 0;
+                margin: 0 20px;
+                transition: 0.3s ease;
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                    
+                    &:hover {
+                        font-weight: bold;
+                    }
+                    
+                    @media @hamburger {
+                        display: block;
+                    }
+                }
+            }
+        } // closes .nav
+
+        .menu-bg, #menu-bar {
+            top: 0;
+            right: 0;   // Change position of the Hamburger
+            position: absolute;
+        }
+
+        .menu-bg {
+            z-index: 1;
+            width: 0;
+            height: 0;
+            background: rgba(28, 26, 26, 0.95);
+            transition: 0.3s ease;
+            margin: 30px 0 20px 20px;
+        }
+
+        #menu-bar {
+            z-index: 2;
+            
+            @media (min-width: 700px) {
+                z-index: -10;
+                display: none;
+            }
+
+            &:hover {
+                height: 59.5px;
+                .buttonAnimation(hamburgerBgChange, 1.0s, forwards)
+            }
+
+            @keyframes hamburgerBgChange {
+                to {
+                    background-color: @pintereach-red;
+                }
+            }
+        }
+
+        .change-bg{
+            width: 101.5px;
+            height: 270px;
+            transform: translate(0, 30px);
+        }
+
+        .change .bar {
+            background-color: white !important;
+        }
+
+        .change {
+            display: block !important;
+        }
+    } // closes nav
+} // closes header
+

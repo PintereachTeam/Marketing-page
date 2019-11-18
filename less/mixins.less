@@ -1,0 +1,31 @@
+// Mixins Here
+.displayFlex(@direction: row, @justifyContent: space-between, @alignItems) {
+    display: flex;
+    flex-direction: @direction;
+    justify-content: @justifyContent;
+    align-items: @alignItems;
+}
+
+.textStyler(@color: black, @weight, @size, @family) {
+    color: @color;
+    font-weight: @weight;
+    font-size: @size;
+    font-family: @family;
+}
+
+.ourTeamH1Editor(@top, @height, @size) {
+    margin-top: @top;
+    height: @height;
+    font-size: @size;
+}
+
+.aboutIconResizer(@height, @width) {
+    height: @height;
+    width: @width;
+}
+
+.buttonAnimation(@ani-name, @ani-duration, @ani-fill) {
+    animation-name: @ani-name;
+    animation-duration: @ani-duration;
+    animation-fill-mode: @ani-fill; 
+}

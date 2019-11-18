@@ -1,0 +1,121 @@
+.about-header {
+    .logo h1 {
+        color: @pintereach-purple;
+    }
+    nav a{
+        &:hover {
+            .buttonAnimation(aboutNavColorChange, 0.8s, forwards);
+        }
+
+        @keyframes aboutNavColorChange {
+            to {
+                color: @pintereach-purple;
+            }
+        }
+    }
+
+    .about-menu-bar {
+
+        &:hover {
+            animation-name: hamburgerBgChange-about !important;
+            animation-duration: 1.0s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes hamburgerBgChange-about {
+            to {
+                background-color: @pintereach-purple;
+            }
+        }   
+    }
+}
+
+.about_banner {
+
+    .about_content {
+        border: 2px solid @pintereach-purple;
+        padding: 0 5% 2% 5%;
+        .displayFlex(column, space-between, center);
+        
+        .icon-h2-row{
+
+            .displayFlex(column, space-between, center);
+
+            img {
+                .aboutIconResizer(170px, auto);
+
+                @media (max-height: 700px) {
+                    .aboutIconResizer(100px, auto);
+                }
+
+                @media (max-height: 600px) {
+                    .aboutIconResizer(80px, auto);
+                }
+
+                @media (max-height: 500px) {
+                    .aboutIconResizer(60px, auto);
+                }
+            }
+
+            h2 {
+                font-size: 5rem;
+                color: white;
+                
+                @media @phone {
+                    font-size: 4rem;
+                }
+
+                @media (max-height: 600px) {
+                    font-size: 4rem;
+                }
+
+                @media (max-height: 700px) {
+                    font-size: 4.5rem;
+                }
+            }
+        }
+
+        h3 {
+            text-align: center;
+            margin-top: 3%;
+            font-size: 2rem;
+            color: @pintereach-purple;
+
+            @media @phone {
+                font-size: 1.6rem;
+            }
+            
+            @media (max-height: 700px) {
+                margin: 1%;
+            }
+        }
+
+        p {
+            @media (max-height: 700px) {
+                margin: 0;
+            }
+        }
+
+        .about_button {
+            background: @pintereach-purple;
+            border: 1px solid @pintereach-purple;
+
+            &:hover {
+                .buttonAnimation(buttonColorChange, 0.8s, forwards);
+            }
+
+            @keyframes buttonColorChange {
+                from {
+                    background: @pintereach-purple;
+                    border: 1px solid @pintereach-purple;
+                    color: white;
+                }
+                to {
+                    background: black;
+                    color: @pintereach-purple;
+                    border: 1px solid @pintereach-purple;
+                }
+            } // closes buttonColorChange
+        } // closes .about_button
+    } // closes .about_content
+} // closes about.banner

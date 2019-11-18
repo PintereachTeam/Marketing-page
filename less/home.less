@@ -1,0 +1,123 @@
+.cta_banner {
+    .displayFlex(row, normal, center);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    
+    .cta_banner_vid {
+        position: absolute;
+        z-index: -100;
+        max-height: 100vh;
+        overflow: hidden;
+
+        video {
+            max-width: 160%;
+
+            @media @desktop{   // below 1000px
+                max-width: 200%;
+            }
+
+            @media @tablet {   // below 800px
+                max-width: 240%;
+            }
+
+            @media @hamburger {
+                max-width: 320%;
+            }
+            @media @phone {   // below 500px
+                max-width: 350%;
+            }
+        }
+    }
+
+    .cta_banner_overlay {
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0,0,0,0.1);
+        position: absolute;
+        z-index: 1;
+    }
+
+    .cta_content {
+        .displayFlex(column, space-between, start);
+        align-content: center;
+        width: 80%;
+        margin: 0 auto;
+        padding: 5%;
+        background-color: rgba(0,0,0, 0.9);
+        border: 2px solid white;
+
+        @media @tablet {
+            width: 95%;
+        }
+
+        @media (max-height: 600px) {
+            width: 95%;           
+        }
+
+        h2 {
+            color: @cta-banner-font-color;
+            opacity: 1;
+            font-size: 3.4rem;
+
+            @media @tablet {
+                font-size: 3rem;
+            }
+
+            @media (max-height: 600px) {
+                font-size: 3rem;           
+            }
+        }
+
+        p {
+            color: @cta-banner-font-color;
+            font-size: 2rem;
+            margin: 3% 0;
+            
+            @media @tablet {
+                font-size: 1.7rem;
+            }
+
+            @media (max-height: 600px) {
+                font-size: 1.7rem;           
+            }
+        }
+
+        .cta_button {
+            text-decoration: none;
+            font-family: @headerFont;
+            font-size: 3rem;
+            padding: 1.5% 5%;
+            color: @cta-banner-font-color;
+            border: 1px solid @pintereach-red;
+            background: @pintereach-red;
+            z-index: 10;
+
+            @media @tablet {
+                font-size: 2.2rem;
+            }
+
+            @media (max-height: 600px) {
+                font-size: 2.2rem;           
+            }
+
+            &:hover {
+                .buttonAnimation(ButtonColorChange, 0.8s, forwards);
+            }
+
+            @keyframes ButtonColorChange {
+                from {
+                    background: @pintereach-red;
+                    color: @pintereach-red;
+                    border: 1px solid @pintereach-red;
+                }
+                to {
+                    background: black;
+                    color: @pintereach-red;
+                    border: 1px solid @pintereach-red;
+                }
+            } // closes homeButtonColorChange
+        } // closes .cta_button
+    } // closes .cta_content
+} // closes .cta_banner
