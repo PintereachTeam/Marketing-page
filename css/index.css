@@ -270,10 +270,9 @@ header nav a:hover {
 .cta_banner .cta_banner_overlay {
   width: 100%;
   height: 100vh;
-  background: black;
+  background-color: rgba(0, 0, 0, 0.1);
   position: absolute;
   z-index: 1;
-  opacity: 0.1;
 }
 .cta_banner .cta_content {
   display: flex;
@@ -285,6 +284,7 @@ header nav a:hover {
   margin: 0 auto;
   padding: 5%;
   background-color: rgba(0, 0, 0, 0.9);
+  border: 2px solid #DC143C;
 }
 @media (max-width: 800px) {
   .cta_banner .cta_content {
@@ -303,7 +303,6 @@ header nav a:hover {
 }
 .cta_banner .cta_content p {
   color: white;
-  opacity: 1;
   font-size: 2rem;
   margin: 3% 0;
 }
@@ -318,6 +317,7 @@ header nav a:hover {
   font-size: 3rem;
   padding: 1.5% 5%;
   color: white;
+  border: 1px solid #DC143C;
   background: #DC143C;
   z-index: 10;
 }
@@ -327,6 +327,219 @@ header nav a:hover {
   }
 }
 .cta_banner .cta_content .cta_button:hover {
-  background: white;
-  color: #DC143C;
+  animation-name: ButtonColorChange;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+@keyframes ButtonColorChange {
+  from {
+    background: #DC143C;
+    color: #DC143C;
+    border: 1px solid #DC143C;
+  }
+  to {
+    background: black;
+    color: #DC143C;
+    border: 1px solid #DC143C;
+  }
+}
+.about-header .logo h1 {
+  color: #7804EB;
+}
+.about-header nav a:hover {
+  animation-name: aboutNavColorChange;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+@keyframes aboutNavColorChange {
+  to {
+    color: #7804EB;
+  }
+}
+.about_banner .about_content {
+  border: 2px solid #7804EB;
+  padding: 0 5% 2% 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.about_banner .about_content img {
+  width: 20%;
+}
+.about_banner .about_content h2 {
+  font-size: 5rem;
+  color: white;
+}
+@media (max-width: 500px) {
+  .about_banner .about_content h2 {
+    font-size: 4rem;
+  }
+}
+.about_banner .about_content h3 {
+  text-align: center;
+  margin-top: 3%;
+  font-size: 2rem;
+  color: #7804EB;
+}
+@media (max-width: 500px) {
+  .about_banner .about_content h3 {
+    font-size: 1.6rem;
+  }
+}
+.about_banner .about_content .about_button {
+  background: #7804EB;
+  border: 1px solid #7804EB;
+}
+.about_banner .about_content .about_button:hover {
+  animation-name: buttonColorChange;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+@keyframes buttonColorChange {
+  from {
+    background: #7804EB;
+    border: 1px solid #7804EB;
+    color: white;
+  }
+  to {
+    background: black;
+    color: #7804EB;
+    border: 1px solid #7804EB;
+  }
+}
+.ourTeam-header {
+  background: #000000;
+}
+.ourTeam-header .logo h1 {
+  color: #1DC0D4;
+}
+.ourTeam-header nav a:hover {
+  animation-name: ourTeamNavColorChange;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+@keyframes ourTeamNavColorChange {
+  to {
+    color: #1DC0D4;
+  }
+}
+.ourTeam-container {
+  width: 100%;
+  background: #111419;
+}
+.ourTeam-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 55px;
+  width: 1000px;
+  background: rbga(0, 0, 0, 0.9);
+}
+@media (max-width: 1000px) {
+  .ourTeam-main {
+    width: 100%;
+  }
+}
+.ourTeam-main h1 {
+  color: white;
+  font-weight: 900;
+  font-size: 7rem;
+  font-family: 'PT Sans', sans-serif;
+  margin-top: 30px;
+  width: 100%;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 1000px) {
+  .ourTeam-main h1 {
+    margin-top: 30px;
+    height: 100px;
+    font-size: 6rem;
+  }
+}
+@media (max-width: 800px) {
+  .ourTeam-main h1 {
+    margin-top: 17px;
+    height: 80px;
+    font-size: 5rem;
+  }
+}
+@media (max-width: 500px) {
+  .ourTeam-main h1 {
+    margin-top: 15px;
+    height: 60px;
+    font-size: 4rem;
+  }
+}
+.ourTeam-main .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+  padding: 3% 6%;
+  margin: 1.5% 3%;
+  border: 2px solid #1DC0D4;
+  background: rgba(0, 0, 0, 0.8);
+}
+@media (max-width: 800px) {
+  .ourTeam-main .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .ourTeam-main .row:nth-of-type(2n+1) {
+    flex-direction: column-reverse;
+  }
+}
+.ourTeam-main .row .row-text {
+  text-align: center;
+}
+@media (max-width: 800px) {
+  .ourTeam-main .row .row-text {
+    margin-top: 3%;
+  }
+}
+.ourTeam-main .row .row-text h2 {
+  color: white;
+  font-weight: 900;
+  font-size: 4rem;
+  font-family: 'PT Sans', sans-serif;
+}
+@media (max-width: 1000px) {
+  .ourTeam-main .row .row-text h2 {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 800px) {
+  .ourTeam-main .row .row-text h2 {
+    font-size: 3rem;
+  }
+}
+.ourTeam-main .row .row-text p {
+  color: white;
+  font-weight: 500;
+  font-size: 2rem;
+  font-family: 'PT Sans', sans-serif;
+}
+@media (max-width: 1000px) {
+  .ourTeam-main .row .row-text p {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 800px) {
+  .ourTeam-main .row .row-text p {
+    font-size: 1.7rem;
+  }
+}
+.ourTeam-main .row img {
+  border-radius: 100%;
+  width: 30%;
 }

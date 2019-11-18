@@ -1,0 +1,75 @@
+.about-header {
+    .logo h1 {
+        color: @pintereach-purple;
+    }
+    nav a{
+        &:hover {
+            animation-name: aboutNavColorChange;
+            animation-duration: 0.8s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes aboutNavColorChange {
+            to {
+                color: @pintereach-purple;
+            }
+        }
+
+    }
+}
+
+.about_banner {
+
+    .about_content {
+        border: 2px solid @pintereach-purple;
+        padding: 0 5% 2% 5%;
+        .displayFlex(column, space-between, center);
+        
+        img {
+            width: 20%;
+        }
+        h2 {
+            font-size: 5rem;
+            color: white;
+            
+            @media @phone {
+                font-size: 4rem;
+            }
+        }
+
+        h3 {
+            text-align: center;
+            margin-top: 3%;
+            font-size: 2rem;
+            color: @pintereach-purple;
+
+            @media @phone {
+                font-size: 1.6rem;
+            }
+        }
+
+        .about_button {
+            background: @pintereach-purple;
+            border: 1px solid @pintereach-purple;
+
+            &:hover {
+                animation-name: buttonColorChange;
+                animation-duration: 0.8s;
+                animation-fill-mode: forwards;
+            }
+
+            @keyframes buttonColorChange {
+                from {
+                    background: @pintereach-purple;
+                    border: 1px solid @pintereach-purple;
+                    color: white;
+                }
+                to {
+                    background: black;
+                    color: @pintereach-purple;
+                    border: 1px solid @pintereach-purple;
+                }
+            } // closes buttonColorChange
+        }
+    }
+} // closes about.banner
