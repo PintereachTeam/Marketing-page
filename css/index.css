@@ -134,7 +134,7 @@ html {
 html,
 body {
   font-family: 'PT Sans Narrow', sans-serif;
-  color: #5E6164;
+  color: black;
 }
 h1,
 h2,
@@ -274,6 +274,11 @@ header nav .nav li a {
 header nav .nav li a:hover {
   font-weight: bold;
 }
+@media (max-width: 700px) {
+  header nav .nav li a {
+    display: block;
+  }
+}
 header nav .menu-bg,
 header nav #menu-bar {
   top: 0;
@@ -284,32 +289,40 @@ header nav .menu-bg {
   z-index: 1;
   width: 0;
   height: 0;
-  background: rgba(84, 78, 78, 0.7);
+  background: rgba(28, 26, 26, 0.95);
   transition: 0.3s ease;
   margin: 30px 0 20px 20px;
 }
 header nav #menu-bar {
   z-index: 2;
 }
+@media (min-width: 700px) {
+  header nav #menu-bar {
+    z-index: -10;
+    display: none;
+  }
+}
+header nav #menu-bar:hover {
+  height: 59.5px;
+  animation-name: hamburgerBgChange;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes hamburgerBgChange {
+  to {
+    background-color: #DC143C;
+  }
+}
 header nav .change-bg {
-  width: 140px;
-  height: 400px;
-  transform: translate(0, 10%);
+  width: 101.5px;
+  height: 270px;
+  transform: translate(0, 30px);
 }
 header nav .change .bar {
-  background-color: white;
-}
-header nav .change #bar1 {
-  transform: translateY(4px) rotate(-45deg);
-}
-header nav .change #bar3 {
-  transform: translateY(-6px) rotate(45deg);
-}
-header nav .change #bar2 {
-  opacity: 0;
+  background-color: white !important;
 }
 header nav .change {
-  display: block;
+  display: block !important;
 }
 .cta_banner {
   display: flex;
@@ -459,6 +472,16 @@ header nav .change {
     color: #7804EB;
   }
 }
+.about-header .about-menu-bar:hover {
+  animation-name: hamburgerBgChange-about !important;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes hamburgerBgChange-about {
+  to {
+    background-color: #7804EB;
+  }
+}
 .about_banner .about_content {
   border: 2px solid #7804EB;
   padding: 0 5% 2% 5%;
@@ -570,6 +593,16 @@ header nav .change {
 @keyframes ourTeamNavColorChange {
   to {
     color: #1DC0D4;
+  }
+}
+.ourTeam-header .ourTeam-menu-bar:hover {
+  animation-name: hamburgerBgChange-ourTeam !important;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes hamburgerBgChange-ourTeam {
+  to {
+    background-color: #1DC0D4;
   }
 }
 .ourTeam-container {
@@ -690,4 +723,27 @@ header nav .change {
 .ourTeam-main .row img {
   border-radius: 100%;
   width: 30%;
+}
+.logIn-header .logo h1 {
+  color: #78eb04;
+}
+.logIn-header nav a:hover {
+  animation-name: logInNavColorChange;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+@keyframes logInNavColorChange {
+  to {
+    color: #78eb04;
+  }
+}
+.logIn-header .logIn-menu-bar:hover {
+  animation-name: hamburgerBgChange-logIn !important;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes hamburgerBgChange-logIn {
+  to {
+    background-color: #78eb04;
+  }
 }

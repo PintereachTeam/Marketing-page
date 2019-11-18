@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Narrow&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="ourTeam-header">
+    <header class='ourTeam-header'>
         <a class="logo" href="./index.html">
             <img src="./img/icon_white.png" alt="pinterest icon">
             <h1>Pintereach</h1>
@@ -26,6 +26,20 @@
             <a href="./about.html">About</a>
             <a href="./ourTeam.html">Our Team</a>
             <a href="./logIn.html">Log In</a>
+            <div id='menu-bar' class='ourTeam-menu-bar'>
+                <div id='menu' onclick='onClickMenu()'>
+                    <div id='bar1' class='bar'></div>
+                    <div id='bar2' class='bar'></div>
+                    <div id='bar3' class='bar'></div>
+                </div>
+                <ul class='nav' id='nav'>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./ourTeam.html">Our Team</a></li>
+                    <li><a href="./logIn.html">Log In</a></li>
+                </ul>
+            </div>
+            <div class='menu-bg' id='menu-bg'></div>
         </nav>
     </header>
     <div class='ourTeam-container'>
@@ -69,8 +83,7 @@
             </div>
         </section>
     </div>
-    <footer>
-
-    </footer>
+    
+    <script src='./js/script.js'></script>
 </body>
 </html>

@@ -54,9 +54,7 @@ header {
             }
 
             &:hover {
-                animation-name: colorChange;
-                animation-duration: 1.0s;
-                animation-fill-mode: forwards;
+                .buttonAnimation(colorChange, 1.0s, forwards)
             }
 
             @keyframes colorChange {
@@ -105,9 +103,13 @@ header {
                 a {
                     color: #fff;
                     text-decoration: none;
-
+                    
                     &:hover {
                         font-weight: bold;
+                    }
+                    
+                    @media @hamburger {
+                        display: block;
                     }
                 }
             }
@@ -117,48 +119,50 @@ header {
             top: 0;
             right: 0;   // Change position of the Hamburger
             position: absolute;
-            // display: none;
-
         }
 
         .menu-bg {
             z-index: 1;
             width: 0;
             height: 0;
-            background: rgba(84,78,78,0.7);
+            background: rgba(28, 26, 26, 0.95);
             transition: 0.3s ease;
             margin: 30px 0 20px 20px;
         }
 
         #menu-bar {
             z-index: 2;
+            
+            @media (min-width: 700px) {
+                z-index: -10;
+                display: none;
+            }
+
+            &:hover {
+                height: 59.5px;
+                .buttonAnimation(hamburgerBgChange, 1.0s, forwards)
+            }
+
+            @keyframes hamburgerBgChange {
+                to {
+                    background-color: @pintereach-red;
+                }
+            }
         }
 
         .change-bg{
-            width: 140px;
-            height: 400px;
-            transform: translate(0, 10%);
+            width: 101.5px;
+            height: 270px;
+            transform: translate(0, 30px);
         }
 
         .change .bar {
-            background-color: white;
-        }
-        .change #bar1{
-            transform: translateY(4px) rotate(-45deg);
-        }
-        .change #bar3 {
-            transform: translateY(-6px) rotate(45deg);
-        }
-        .change #bar2 {
-            opacity: 0;
+            background-color: white !important;
         }
 
         .change {
-            display: block;
+            display: block !important;
         }
-
     } // closes nav
-
-    
 } // closes header
 

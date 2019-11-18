@@ -1,0 +1,28 @@
+.logIn-header {
+    .logo h1 {
+        color: @pintereach-green;
+    }
+    nav a{
+        &:hover {
+            .buttonAnimation(logInNavColorChange, 0.8s, forwards)
+        }
+        @keyframes logInNavColorChange {
+            to {
+                color: @pintereach-green;
+            }
+        }
+    }
+
+    .logIn-menu-bar {
+        &:hover {
+            animation-name: hamburgerBgChange-logIn !important;
+            animation-duration: 1.0s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes hamburgerBgChange-logIn {
+            to {
+                background-color: @pintereach-green;
+            }
+        }   
+    }
+}

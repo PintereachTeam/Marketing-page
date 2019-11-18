@@ -5,9 +5,7 @@
     }
     nav a{
         &:hover {
-            animation-name: ourTeamNavColorChange;
-            animation-duration: 0.8s;
-            animation-fill-mode: forwards;
+            .buttonAnimation(ourTeamNavColorChange, 0.8s, forwards);
         }
 
         @keyframes ourTeamNavColorChange {
@@ -16,28 +14,26 @@
             }
         }
     }
+
+    .ourTeam-menu-bar {
+
+        &:hover {
+            animation-name: hamburgerBgChange-ourTeam !important;
+            animation-duration: 1.0s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes hamburgerBgChange-ourTeam {
+            to {
+                background-color: @pintereach-blue;
+            }
+        }   
+    }
 }
 
 .ourTeam-container {
     width: 100%;
     background: #111419;
-
-// CHECKING RESPONSIVE DESIGN
-    // @media @desktop {
-    //     background: pink;
-    // }
-    // @media @tablet {
-    //     background: blue;
-    // }
-
-    // @media @hamburger {
-    //     background: brown;
-    // }
-
-    // @media @phone {
-    //     background: green;
-    // }
-// CHECKING RESPONSIVE DESIGN
 }
 
 .ourTeam-main {

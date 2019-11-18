@@ -4,9 +4,7 @@
     }
     nav a{
         &:hover {
-            animation-name: aboutNavColorChange;
-            animation-duration: 0.8s;
-            animation-fill-mode: forwards;
+            .buttonAnimation(aboutNavColorChange, 0.8s, forwards);
         }
 
         @keyframes aboutNavColorChange {
@@ -14,7 +12,21 @@
                 color: @pintereach-purple;
             }
         }
+    }
 
+    .about-menu-bar {
+
+        &:hover {
+            animation-name: hamburgerBgChange-about !important;
+            animation-duration: 1.0s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes hamburgerBgChange-about {
+            to {
+                background-color: @pintereach-purple;
+            }
+        }   
     }
 }
 
@@ -89,9 +101,7 @@
             border: 1px solid @pintereach-purple;
 
             &:hover {
-                animation-name: buttonColorChange;
-                animation-duration: 0.8s;
-                animation-fill-mode: forwards;
+                .buttonAnimation(buttonColorChange, 0.8s, forwards);
             }
 
             @keyframes buttonColorChange {
