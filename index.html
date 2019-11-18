@@ -22,10 +22,24 @@
             <h1>Pintereach</h1>
         </a>
         <nav>
-            <a href="./index.html">Home</a>
-            <a href="./about.html">About</a>
-            <a href="./ourTeam.html">Our Team</a>
-            <a href="./logIn.html">Log In</a>
+            <a class='main-nav' href="./index.html">Home</a>
+            <a class='main-nav' href="./about.html">About</a>
+            <a class='main-nav' href="./ourTeam.html">Our Team</a>
+            <a class='main-nav' href="./logIn.html">Log In</a>
+            <div id='menu-bar'>
+                <div id='menu' onclick='onClickMenu()'>
+                    <div id='bar1' class='bar'></div>
+                    <div id='bar2' class='bar'></div>
+                    <div id='bar3' class='bar'></div>
+                </div>
+                <ul class='nav' id='nav'>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Log In</a></li>
+                </ul>
+            </div>
+            <div class='menu-bg' id='menu-bg'></div>
         </nav>
     </header>
     <div class="container">
@@ -43,5 +57,6 @@
             </div>
         </section>
     </div>
+    <script src='./js/script.js'></script>
 </body>
 </html>

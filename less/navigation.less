@@ -49,6 +49,10 @@ header {
                 font-size: 1.5rem;
             }
 
+            @media @hamburger {
+                display: none;
+            }
+
             &:hover {
                 animation-name: colorChange;
                 animation-duration: 1.0s;
@@ -60,7 +64,99 @@ header {
                     color: @pintereach-red;
                 }
             }
-        } 
+        }
+
+        #menu {
+            width: 35px;
+            height: 50px;
+            margin: 23px 20px 20px 20px;    // location of hamburger menu
+            cursor: pointer;
+
+            .bar {
+                height: 5px;
+                width: 100%;
+                background-color: white;  // color of hamburger menu
+                display: block;
+                border-radius: 5px;
+
+                @media (min-width: 700px) {
+                    display: none;
+                }
+            }
+
+            #bar1 {
+                transform: translateY(-4px);
+            }
+            #bar3{
+                transform: translateY(4px);
+            }
+        } // closes #menu
+
+        .nav {
+            padding: 0;
+            display: none;
+
+            li {
+                list-style: none;
+                padding: 16px 0;
+                margin: 0 20px;
+                transition: 0.3s ease;
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+
+                    &:hover {
+                        font-weight: bold;
+                    }
+                }
+            }
+        } // closes .nav
+
+        .menu-bg, #menu-bar {
+            top: 0;
+            right: 0;   // Change position of the Hamburger
+            position: absolute;
+            // display: none;
+
+        }
+
+        .menu-bg {
+            z-index: 1;
+            width: 0;
+            height: 0;
+            background: rgba(84,78,78,0.7);
+            transition: 0.3s ease;
+            margin: 30px 0 20px 20px;
+        }
+
+        #menu-bar {
+            z-index: 2;
+        }
+
+        .change-bg{
+            width: 140px;
+            height: 400px;
+            transform: translate(0, 10%);
+        }
+
+        .change .bar {
+            background-color: white;
+        }
+        .change #bar1{
+            transform: translateY(4px) rotate(-45deg);
+        }
+        .change #bar3 {
+            transform: translateY(-6px) rotate(45deg);
+        }
+        .change #bar2 {
+            opacity: 0;
+        }
+
+        .change {
+            display: block;
+        }
+
     } // closes nav
 
     

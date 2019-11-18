@@ -218,6 +218,11 @@ header nav a {
     font-size: 1.5rem;
   }
 }
+@media (max-width: 700px) {
+  header nav a {
+    display: none;
+  }
+}
 header nav a:hover {
   animation-name: colorChange;
   animation-duration: 1s;
@@ -227,6 +232,84 @@ header nav a:hover {
   to {
     color: #DC143C;
   }
+}
+header nav #menu {
+  width: 35px;
+  height: 50px;
+  margin: 23px 20px 20px 20px;
+  cursor: pointer;
+}
+header nav #menu .bar {
+  height: 5px;
+  width: 100%;
+  background-color: white;
+  display: block;
+  border-radius: 5px;
+}
+@media (min-width: 700px) {
+  header nav #menu .bar {
+    display: none;
+  }
+}
+header nav #menu #bar1 {
+  transform: translateY(-4px);
+}
+header nav #menu #bar3 {
+  transform: translateY(4px);
+}
+header nav .nav {
+  padding: 0;
+  display: none;
+}
+header nav .nav li {
+  list-style: none;
+  padding: 16px 0;
+  margin: 0 20px;
+  transition: 0.3s ease;
+}
+header nav .nav li a {
+  color: #fff;
+  text-decoration: none;
+}
+header nav .nav li a:hover {
+  font-weight: bold;
+}
+header nav .menu-bg,
+header nav #menu-bar {
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+header nav .menu-bg {
+  z-index: 1;
+  width: 0;
+  height: 0;
+  background: rgba(84, 78, 78, 0.7);
+  transition: 0.3s ease;
+  margin: 30px 0 20px 20px;
+}
+header nav #menu-bar {
+  z-index: 2;
+}
+header nav .change-bg {
+  width: 140px;
+  height: 400px;
+  transform: translate(0, 10%);
+}
+header nav .change .bar {
+  background-color: white;
+}
+header nav .change #bar1 {
+  transform: translateY(4px) rotate(-45deg);
+}
+header nav .change #bar3 {
+  transform: translateY(-6px) rotate(45deg);
+}
+header nav .change #bar2 {
+  opacity: 0;
+}
+header nav .change {
+  display: block;
 }
 .cta_banner {
   display: flex;
@@ -284,9 +367,14 @@ header nav a:hover {
   margin: 0 auto;
   padding: 5%;
   background-color: rgba(0, 0, 0, 0.9);
-  border: 2px solid #DC143C;
+  border: 2px solid white;
 }
 @media (max-width: 800px) {
+  .cta_banner .cta_content {
+    width: 95%;
+  }
+}
+@media (max-height: 600px) {
   .cta_banner .cta_content {
     width: 95%;
   }
@@ -301,12 +389,22 @@ header nav a:hover {
     font-size: 3rem;
   }
 }
+@media (max-height: 600px) {
+  .cta_banner .cta_content h2 {
+    font-size: 3rem;
+  }
+}
 .cta_banner .cta_content p {
   color: white;
   font-size: 2rem;
   margin: 3% 0;
 }
 @media (max-width: 800px) {
+  .cta_banner .cta_content p {
+    font-size: 1.7rem;
+  }
+}
+@media (max-height: 600px) {
   .cta_banner .cta_content p {
     font-size: 1.7rem;
   }
@@ -322,6 +420,11 @@ header nav a:hover {
   z-index: 10;
 }
 @media (max-width: 800px) {
+  .cta_banner .cta_content .cta_button {
+    font-size: 2.2rem;
+  }
+}
+@media (max-height: 600px) {
   .cta_banner .cta_content .cta_button {
     font-size: 2.2rem;
   }
@@ -364,16 +467,51 @@ header nav a:hover {
   justify-content: space-between;
   align-items: center;
 }
-.about_banner .about_content img {
-  width: 20%;
+.about_banner .about_content .icon-h2-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
-.about_banner .about_content h2 {
+.about_banner .about_content .icon-h2-row img {
+  height: 170px;
+  width: auto;
+}
+@media (max-height: 700px) {
+  .about_banner .about_content .icon-h2-row img {
+    height: 100px;
+    width: auto;
+  }
+}
+@media (max-height: 600px) {
+  .about_banner .about_content .icon-h2-row img {
+    height: 80px;
+    width: auto;
+  }
+}
+@media (max-height: 500px) {
+  .about_banner .about_content .icon-h2-row img {
+    height: 60px;
+    width: auto;
+  }
+}
+.about_banner .about_content .icon-h2-row h2 {
   font-size: 5rem;
   color: white;
 }
 @media (max-width: 500px) {
-  .about_banner .about_content h2 {
+  .about_banner .about_content .icon-h2-row h2 {
     font-size: 4rem;
+  }
+}
+@media (max-height: 600px) {
+  .about_banner .about_content .icon-h2-row h2 {
+    font-size: 4rem;
+  }
+}
+@media (max-height: 700px) {
+  .about_banner .about_content .icon-h2-row h2 {
+    font-size: 4.5rem;
   }
 }
 .about_banner .about_content h3 {
@@ -385,6 +523,16 @@ header nav a:hover {
 @media (max-width: 500px) {
   .about_banner .about_content h3 {
     font-size: 1.6rem;
+  }
+}
+@media (max-height: 700px) {
+  .about_banner .about_content h3 {
+    margin: 1%;
+  }
+}
+@media (max-height: 700px) {
+  .about_banner .about_content p {
+    margin: 0;
   }
 }
 .about_banner .about_content .about_button {
