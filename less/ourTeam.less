@@ -87,10 +87,15 @@
         }
         .row-text{
             text-align: center;
+            width: 55%;
+            // border: 1px solid red;
 
             @media @tablet {
                 margin-top: 3%;
+                width: 70%;
             }
+
+            // border: 1px solid red;
 
             h2 {
                 .textStyler(white, 900, 4rem, @headerFont);
@@ -112,6 +117,28 @@
                     font-size: 1.7rem;
                 }
             }
+            .github-linkedin i.fab{
+                background: @pintereach-blue;
+                color: white;
+                font-size: 2rem;
+                padding: 2% 6%;
+                border-radius: 5px;
+                margin: 6% 3% 0 3%;
+
+                &:hover {
+                    .buttonAnimation(github-linkedin-animation, 1s, forwards)
+                }
+
+                @keyframes github-linkedin-animation {
+                    to {
+                        background: white;
+                        color: @pintereach-blue;
+                    }
+                }
+            }
+
+            
+
         }
 
         img {
@@ -119,4 +146,44 @@
             width: 30%;
         }
     } // closes row
+}
+
+footer {
+    height: 13vh;
+    background: #212529;
+    .displayFlex(column, space-evenly, center);
+    // border: 1px solid red;
+    padding: 5% 0;
+
+    .multimedia{
+        // border: 1px solid red;
+        width: 50%;
+        text-align: center;
+        .fab {
+            color: @pintereach-blue;
+            font-size: 2rem;
+            margin: 3%;
+            padding: 0.5% 2%;
+            border-radius: 5px;
+            background: #dee2e6;
+            
+            &:hover {
+                .buttonAnimation(multimedia-animation, 0.3s, forwards)
+            }
+
+            @keyframes multimedia-animation {
+                to {
+                    background: #212529;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .copyright {
+        color: white;
+        font-family: @headerFont;
+        font-size: 12.8px;
+        margin-bottom: 1%;
+    }
 }
